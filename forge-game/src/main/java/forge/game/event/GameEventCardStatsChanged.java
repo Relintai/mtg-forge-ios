@@ -1,0 +1,45 @@
+package forge.game.event;
+
+import com.google.common.collect.Iterables;
+import forge.game.card.Card;
+import forge.util.TextUtil;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Arrays;
+import java.util.Collection;
+
+/**
+ * This means card's characteristics have changed on server, clients must re-request them
+ */
+public class GameEventCardStatsChanged extends GameEvent {
+
+    public final Collection<Card> cards;
+    public GameEventCardStatsChanged(Card affected) {
+        cards = Arrays.asList(affected);
+    }
+    
+    public GameEventCardStatsChanged(Collection<Card> affected) {
+        cards = affected;
+    }
+
+    /* (non-Javadoc)
+     * @see forge.game.event.GameEvent#visit(forge.game.event.IGameEventVisitor)
+     */
+    @Override
+    public <T> T visit(IGameEventVisitor<T> visitor) {
+        // TODO Auto-generated method stub
+        return visitor.visit(this);
+    }
+    
+    @Override
+    public String toString() {
+        Card card = Iterables.getFirst(cards, null);
+        if ( null == card )
+            return "Card state changes: (empty list)";
+        if( cards.size() == 1) 
+            return TextUtil.concatWithSpace("Card state changes:", card.getName(), TextUtil.enclosedParen(StringUtils.join(card.getType(), ' ')), TextUtil.transformPT(card.getNetPower(),card.getNetToughness()) );
+        else
+            return TextUtil.concatWithSpace("Card state changes:", card.getName(), TextUtil.enclosedParen(StringUtils.join(card.getType(), ' ')), TextUtil.transformPT(card.getNetPower(),card.getNetToughness()),"and", String.valueOf(cards.size() - 1), "more");
+    }
+
+}
