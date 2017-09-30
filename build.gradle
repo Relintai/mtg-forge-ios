@@ -31,6 +31,7 @@ allprojects {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+		maven { url "http://4thline.org/m2" }
     }
 }
 
@@ -39,8 +40,8 @@ project(":forge-core") {
 
 
     dependencies {
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        
+        compile "com.google.guava:guava:16.0.1"
+		compile "org.apache.commons:commons-lang3:3.3"
     }
 }
 
@@ -49,8 +50,23 @@ project(":forge-ai") {
 
 
     dependencies {
+		compile project(":forge-core")
+		compile project(":forge-game")
+		compile "org.apache.commons:commons-math3:3.6.1"
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         
+    }
+}
+
+project(":forge-game") {
+    apply plugin: "java"
+
+
+    dependencies {
+		compile project(":forge-core")
+        compile "com.esotericsoftware.minlog:minlog:1.2"
+		compile "junit:junit:4.10"
+		compile "org.apache.commons:commons-math3:3.6.1"
     }
 }
 
@@ -59,9 +75,13 @@ project(":forge-gui") {
 
 
     dependencies {
-    		compile project(":forge-core")
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        
+    	compile project(":forge-core")
+		compile project(":forge-game")
+		compile project(":forge-ai")
+		compile "io.netty:netty-all:4.0.25.Final"
+		compile "com.thoughtworks.xstream:xstream:1.4.7"
+		compile "log4j:log4j:1.2.17"
+		compile "org.fourthline.cling:cling-support:2.0.1"
     }
 }
 
@@ -73,67 +93,12 @@ project(":forge-gui-desktop") {
         compile project(":forge-core")
         compile project(":forge-ai")
         compile project(":forge-gui")
-        compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        
+        compile "com.miglayout:miglayout:3.5.5"
+		compile "com.mortennobel:java-image-scaling:0.8.5"
+		compile "org.freemarker:freemarker:2.3.20"
+		compile "javazoom:jlayer:1.0.1"
     }
 }
-
-project(":forge-gui-mobile") {
-    apply plugin: "java"
-
-
-    dependencies {
-    	    compile project(":forge-core")
-    	    compile project(":forge-ai")
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-backend-moe:$gdxVersion"
-    }
-}
-
-project(":forge-gui-ios") {
-    apply plugin: "moe"
-
-    configurations { natives }
-
-    dependencies {
-    		compile project(":forge-core")
-    		compile project(":forge-ai")
-        compile project(":forge-gui-mobile")
-        compile "com.badlogicgames.gdx:gdx-backend-moe:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
-        
-    }
-}
-
-project(":ios-moe") {
-    apply plugin: "moe"
-
-    configurations { natives }
-
-    dependencies {
-        compile project(":forge-gui-mobile")
-        compile "com.badlogicgames.gdx:gdx-backend-moe:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
-        
-    }
-}
-
-project(":forge-gui-ios") {
-    apply plugin: "java"
-    apply plugin: "robovm"
-
-
-    dependencies {
-        compile project(":forge-gui-mobile")
-        compile "com.mobidevelop.robovm:robovm-rt:$roboVMVersion"
-        compile "com.mobidevelop.robovm:robovm-cocoatouch:$roboVMVersion"
-        compile "com.badlogicgames.gdx:gdx-backend-robovm:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
-        
-    }
-}
-
 
 tasks.eclipse.doLast {
     delete ".project"
