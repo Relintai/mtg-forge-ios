@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <condition else="1.6.5-SNAPSHOT-r${forge.revision}${forge.specialStatus} (mixed revisions detected; please update from the root directory)" property="fullversionstring" value="1.6.5-SNAPSHOT-r${forge.revision}${forge.specialStatus}">
+    <contains string="${forge.mixedRevisions}" substring="false"/>
+  </condition>
+</target>
+</project>
