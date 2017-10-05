@@ -1,4 +1,6 @@
 .gradle/*
 build/*
 xcode/*
-
+*.class
+*.jar
+.idea/

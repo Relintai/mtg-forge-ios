@@ -100,6 +100,35 @@ project(":forge-gui-desktop") {
     }
 }
 
+project(":forge-gui-mobile") {
+    apply plugin: "java"
+
+
+    dependencies {
+        compile project(":forge-core")
+        compile project(":forge-ai")
+        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+    }
+}
+
+project(":forge-gui-mobile-desktop") {
+    apply plugin: "java"
+
+
+    dependencies {
+        compile project(":forge-core")
+        compile project(":forge-ai")
+        compile project(":forge-gui-mobile")
+        compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+        compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+        compile "com.miglayout:miglayout:3.5.5"
+        compile "com.mortennobel:java-image-scaling:0.8.5"
+        compile "org.freemarker:freemarker:2.3.20"
+        compile "javazoom:jlayer:1.0.1"
+    }
+}
+
 tasks.eclipse.doLast {
     delete ".project"
 }
