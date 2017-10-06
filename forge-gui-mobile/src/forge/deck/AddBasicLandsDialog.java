@@ -20,6 +20,7 @@ package forge.deck;
 import java.text.NumberFormat;
 import java.util.Map.Entry;
 
+import com.badlogic.gdx.utils.Align;
 import com.google.common.collect.Iterables;
 import forge.Forge;
 import forge.Graphics;
@@ -122,7 +123,7 @@ public class AddBasicLandsDialog extends FDialog {
         callback = callback0;
         currentDeck = deck;
 
-        lblDeckInfo.setAlignment(HAlignment.CENTER);
+        lblDeckInfo.setAlignment(Align.center);
         lblDeckInfo.setFont(FSkinFont.get(12));
 
         cbLandSet.setFont(lblLandSet.getFont());
@@ -322,7 +323,7 @@ public class AddBasicLandsDialog extends FDialog {
                     card = generateCard(artIndex); //generate card for display
                 }
             });
-            lblCount = add(new FLabel.Builder().text("0").font(FSkinFont.get(18)).align(HAlignment.CENTER).build());
+            lblCount = add(new FLabel.Builder().text("0").font(FSkinFont.get(18)).align(Align.center).build());
             btnSubtract = add(new FLabel.ButtonBuilder().icon(FSkinImage.MINUS).command(new FEventHandler() {
                 @Override
                 public void handleEvent(FEvent e) {

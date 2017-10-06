@@ -1,6 +1,7 @@
 package forge.itemmanager.filters;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 import forge.assets.FSkinFont;
 import forge.item.InventoryItem;
@@ -60,7 +61,7 @@ public abstract class ListLabelFilter<T extends InventoryItem> extends ItemFilte
 
     private class ListLabel extends FLabel {
         private ListLabel() {
-            super(new FLabel.Builder().align(HAlignment.LEFT).font(LABEL_FONT));
+            super(new FLabel.Builder().align(Align.left).font(LABEL_FONT));
         }
 
         @Override

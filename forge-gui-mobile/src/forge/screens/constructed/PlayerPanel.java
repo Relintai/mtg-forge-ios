@@ -7,6 +7,7 @@ import java.util.Set;
 import org.apache.commons.lang3.StringUtils;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
@@ -692,7 +693,7 @@ public class PlayerPanel extends FContainer {
 
     /** Adds a pre-styled FLabel component with the specified title. */
     private FLabel newLabel(String title) {
-        return new FLabel.Builder().text(title).font(LABEL_FONT).align(HAlignment.RIGHT).build();
+        return new FLabel.Builder().text(title).font(LABEL_FONT).align(Align.right).build();
     }
     
     private static final ImmutableList<String> genderOptions = ImmutableList.of("Male",    "Female",  "Any");

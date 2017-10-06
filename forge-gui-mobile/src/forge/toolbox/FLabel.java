@@ -25,7 +25,7 @@ public class FLabel extends FDisplayObject implements IButton {
         private float      bldIconScaleFactor = 0.8f;
         private FSkinFont  bldFont            = FSkinFont.get(14);
         private float      bldAlphaComposite  = 0.7f;
-        private Align bldAlignment       = Align.LEFT;
+        private int bldAlignment       = Align.left;
         private Vector2    bldInsets          = new Vector2(DEFAULT_INSETS, DEFAULT_INSETS);
 
         private boolean bldSelectable        = false;
@@ -48,7 +48,7 @@ public class FLabel extends FDisplayObject implements IButton {
         // Begin builder methods.
         public Builder text(final String s0) { this.bldText = s0; return this; }
         public Builder icon(final FImage i0) { this.bldIcon = i0; return this; }
-        public Builder align(final Align a0) { this.bldAlignment = a0; return this; }
+        public Builder align(final int a0) { this.bldAlignment = a0; return this; }
         public Builder insets(final Vector2 v0) { this.bldInsets = v0; return this; }
         public Builder opaque(final boolean b0) { this.bldOpaque = b0; return this; }
         public Builder opaque() { opaque(true); return this; }
@@ -75,7 +75,7 @@ public class FLabel extends FDisplayObject implements IButton {
     public static class ButtonBuilder extends Builder {
         public ButtonBuilder() {
             opaque();
-            align(HAlignment.CENTER);
+            align(Align.center);
         }
     }
 
@@ -103,7 +103,7 @@ public class FLabel extends FDisplayObject implements IButton {
     private float iconScaleFactor;
     private FSkinFont font;
     private float alphaComposite;
-    private Align alignment;
+    private int alignment;
     private Vector2 insets;
     private boolean selectable, selected, opaque, iconInBackground, iconScaleAuto, iconScaleWithFont, pressed;
 
@@ -186,10 +186,10 @@ public class FLabel extends FDisplayObject implements IButton {
         insets = insets0;
     }
 
-    public Align getAlignment() {
+    public int getAlignment() {
         return alignment;
     }
-    public void setAlignment(final Align alignment0) {
+    public void setAlignment(final int alignment0) {
         alignment = alignment0;
     }
 
@@ -392,7 +392,7 @@ public class FLabel extends FDisplayObject implements IButton {
         }
     }
 
-    private void drawText(Graphics g, float x, float y, float w, float h, Align align) {
+    private void drawText(Graphics g, float x, float y, float w, float h, int align) {
         g.startClip(x, y, w, h);
         if (textRenderer == null) {
             g.drawText(text, font, textColor, x, y, w, h, false, align, true);

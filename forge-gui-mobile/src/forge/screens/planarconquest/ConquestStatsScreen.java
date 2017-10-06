@@ -1,6 +1,7 @@
 package forge.screens.planarconquest;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 import forge.assets.FImage;
 import forge.assets.FSkinFont;
@@ -57,7 +58,7 @@ public class ConquestStatsScreen extends FScreen implements IVConquestStats {
                 cbPlanes.addItem(plane);
             }
         }
-        cbPlanes.setAlignment(HAlignment.CENTER);
+        cbPlanes.setAlignment(Align.center);
         cbPlanes.setChangedHandler(new FEventHandler() {
             @Override
             public void handleEvent(FEvent e) {

@@ -2,6 +2,7 @@ package forge.toolbox;
 
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 import forge.Forge;
 import forge.Forge.KeyInputAdapter;
@@ -35,7 +36,7 @@ public class FTextField extends FDisplayObject implements ITextField {
 
     private String text, ghostText, textBeforeKeyInput;
     protected FSkinFont font, renderedFont;
-    private HAlignment alignment;
+    private int alignment;
     private int selStart, selLength;
     private boolean isEditing, readOnly;
 
@@ -81,7 +82,7 @@ public class FTextField extends FDisplayObject implements ITextField {
         text = text0;
         ghostText = "";
         setFont(DEFAULT_FONT);
-        alignment = HAlignment.LEFT;
+        alignment = Align.left;
     }
 
     public String getText() {
@@ -131,10 +132,10 @@ public class FTextField extends FDisplayObject implements ITextField {
         return text.isEmpty();
     }
 
-    public HAlignment getAlignment() {
+    public int getAlignment() {
         return alignment;
     }
-    public void setAlignment(HAlignment alignment0) {
+    public void setAlignment(int alignment0) {
         alignment = alignment0;
     }
 
@@ -433,12 +434,12 @@ public class FTextField extends FDisplayObject implements ITextField {
 
     protected float getTextLeft() {
         switch (alignment) {
-        case LEFT:
+        case Align.left:
         default:
             return getLeftPadding();
-        case CENTER:
+        case Align.center:
             return getLeftPadding() + (getWidth() - getRightPadding() - getLeftPadding() - renderedFont.getBounds(text).width) / 2;
-        case RIGHT:
+        case Align.right:
             return getWidth() - getRightPadding() - renderedFont.getBounds(text).width;
         }
     }

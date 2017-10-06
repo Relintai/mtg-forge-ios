@@ -1,7 +1,7 @@
 package forge.error;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 import forge.Forge;
 import forge.Graphics;
@@ -14,6 +14,7 @@ import forge.toolbox.FEvent;
 import forge.toolbox.FEvent.FEventHandler;
 import forge.toolbox.FScrollPane;
 import forge.toolbox.FTextArea;
+import forge.toolbox.TextBounds;
 import forge.util.Callback;
 import forge.util.Utils;
 
@@ -147,7 +148,7 @@ public class BugReportDialog extends FScreen { //use screen rather than dialog s
         @Override
         public void drawBackground(Graphics g) {
             g.fillRect(BACK_COLOR, 0, 0, getWidth(), getHeight());
-            g.drawText(text, FONT, FORE_COLOR, PADDING - getScrollLeft(), PADDING - getScrollTop(), getScrollWidth() - 2 * PADDING, getScrollHeight() - 2 * PADDING, false, HAlignment.LEFT, false);
+            g.drawText(text, FONT, FORE_COLOR, PADDING - getScrollLeft(), PADDING - getScrollTop(), getScrollWidth() - 2 * PADDING, getScrollHeight() - 2 * PADDING, false, Align.left, false);
         }
 
         @Override

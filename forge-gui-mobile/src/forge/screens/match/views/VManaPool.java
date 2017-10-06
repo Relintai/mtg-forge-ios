@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 import forge.Forge;
 import forge.Graphics;
@@ -148,7 +149,7 @@ public class VManaPool extends VDisplayArea {
             w = getWidth();
             h = getHeight() - y;
 
-            g.drawText(text, FONT, FORE_COLOR, x, y, w, h, false, HAlignment.CENTER, false);
+            g.drawText(text, FONT, FORE_COLOR, x, y, w, h, false, Align.center, false);
         }
     }
 }

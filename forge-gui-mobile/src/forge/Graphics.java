@@ -14,10 +14,13 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.utils.ScissorStack;
+import com.badlogic.gdx.utils.Align;
+
 import forge.assets.FImage;
 import forge.assets.FSkinColor;
 import forge.assets.FSkinFont;
 import forge.toolbox.FDisplayObject;
+import forge.toolbox.TextBounds;
 import forge.util.Utils;
 
 import java.util.Stack;
@@ -601,10 +604,10 @@ public class Graphics {
         batch.draw(image, adjustX(x), adjustY(y, h), originX - x, h - (originY - y), w, h, 1, 1, rotation, srcX, srcY, srcWidth, srcHeight, false, false);
     }
 
-    public void drawText(String text, FSkinFont font, FSkinColor skinColor, float x, float y, float w, float h, boolean wrap, HAlignment horzAlignment, boolean centerVertically) {
-        drawText(text, font, skinColor.getColor(), x, y, w, h, wrap, horzAlignment, centerVertically);
+    public void drawText(String text, FSkinFont font, FSkinColor skinColor, float x, float y, float w, float h, boolean wrap, int alignment, boolean centerVertically) {
+        drawText(text, font, skinColor.getColor(), x, y, w, h, wrap, alignment, centerVertically);
     }
-    public void drawText(String text, FSkinFont font, Color color, float x, float y, float w, float h, boolean wrap, HAlignment horzAlignment, boolean centerVertically) {
+    public void drawText(String text, FSkinFont font, Color color, float x, float y, float w, float h, boolean wrap, int alignment, boolean centerVertically) {
         if (alphaComposite < 1) {
             color = FSkinColor.alphaColor(color, color.a * alphaComposite);
         }
@@ -647,7 +650,7 @@ public class Graphics {
             y += (h - textHeight) / 2;
         }
 
-        font.draw(batch, text, color, adjustX(x), adjustY(y, 0), w, wrap, horzAlignment);
+        font.draw(batch, text, color, adjustX(x), adjustY(y, 0), w, wrap, alignment);
 
         if (needClip) {
             endClip();
@@ -659,14 +662,14 @@ public class Graphics {
     }
 
     //use nifty trick with multiple text renders to draw outlined text
-    public void drawOutlinedText(String text, FSkinFont skinFont, Color textColor, Color outlineColor, float x, float y, float w, float h, boolean wrap, HAlignment horzAlignment, boolean centerVertically) {
-        drawText(text, skinFont, outlineColor, x - 1, y, w, h, wrap, horzAlignment, centerVertically);
-        drawText(text, skinFont, outlineColor, x, y - 1, w, h, wrap, horzAlignment, centerVertically);
-        drawText(text, skinFont, outlineColor, x - 1, y - 1, w, h, wrap, horzAlignment, centerVertically);
-        drawText(text, skinFont, outlineColor, x + 1, y, w, h, wrap, horzAlignment, centerVertically);
-        drawText(text, skinFont, outlineColor, x, y + 1, w, h, wrap, horzAlignment, centerVertically);
-        drawText(text, skinFont, outlineColor, x + 1, y + 1, w, h, wrap, horzAlignment, centerVertically);
-        drawText(text, skinFont, textColor, x, y, w, h, wrap, horzAlignment, centerVertically);
+    public void drawOutlinedText(String text, FSkinFont skinFont, Color textColor, Color outlineColor, float x, float y, float w, float h, boolean wrap, int halign, boolean centerVertically) {
+        drawText(text, skinFont, outlineColor, x - 1, y, w, h, wrap, halign, centerVertically);
+        drawText(text, skinFont, outlineColor, x, y - 1, w, h, wrap, halign, centerVertically);
+        drawText(text, skinFont, outlineColor, x - 1, y - 1, w, h, wrap, halign, centerVertically);
+        drawText(text, skinFont, outlineColor, x + 1, y, w, h, wrap, halign, centerVertically);
+        drawText(text, skinFont, outlineColor, x, y + 1, w, h, wrap, halign, centerVertically);
+        drawText(text, skinFont, outlineColor, x + 1, y + 1, w, h, wrap, halign, centerVertically);
+        drawText(text, skinFont, textColor, x, y, w, h, wrap, halign, centerVertically);
     }
 
     public float adjustX(float x) {

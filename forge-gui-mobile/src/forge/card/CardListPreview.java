@@ -2,6 +2,7 @@ package forge.card;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Align;
 
 import forge.item.PaperCard;
 import forge.toolbox.FChoiceList;
@@ -14,7 +15,7 @@ public class CardListPreview extends FLabel {
 
     public CardListPreview(FChoiceList<PaperCard> list0) {
         super(new FLabel.Builder().iconScaleFactor(1).insets(new Vector2(0, 0))
-                .iconInBackground(true).align(HAlignment.CENTER));
+                .iconInBackground(true).align(Align.center));
         list = list0;
     }
 

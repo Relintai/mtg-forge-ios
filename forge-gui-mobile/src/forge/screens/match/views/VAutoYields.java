@@ -3,7 +3,7 @@ package forge.screens.match.views;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import forge.screens.match.MatchController;
 import forge.toolbox.FCheckBox;
@@ -12,6 +12,7 @@ import forge.toolbox.FDialog;
 import forge.toolbox.FEvent;
 import forge.toolbox.FEvent.FEventHandler;
 import forge.toolbox.FOptionPane;
+import forge.toolbox.TextBounds;
 
 public class VAutoYields extends FDialog {
     private final FChoiceList<String> lstAutoYields;

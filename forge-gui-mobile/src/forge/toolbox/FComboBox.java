@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 import forge.Graphics;
 import forge.interfaces.IComboBox;
@@ -223,7 +224,7 @@ public class FComboBox<T> extends FTextField implements IComboBox<T> {
 
     @Override
     protected float getLeftPadding() {
-        if (getAlignment() == HAlignment.CENTER) {
+        if (getAlignment() == Align.center) {
             return getRightPadding(); //match right padding if center aligned
         }
         return super.getLeftPadding();

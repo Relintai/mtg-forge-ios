@@ -3,8 +3,10 @@ package forge.toolbox;
 import org.apache.commons.lang3.StringUtils;
 
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
+
+import forge.toolbox.TextBounds;
 
 import forge.Graphics;
 import forge.UiCommand;
@@ -239,7 +241,7 @@ public class FButton extends FDisplayObject implements IButton {
             if (corner == Corner.BottomLeft || corner == Corner.BottomRight) {
                 displayText = displayText.replaceFirst(" ", "\n"); //allow second word to wrap if corner button
             }
-            g.drawText(displayText, font, foreColor, x, y, w, h, false, HAlignment.CENTER, true);
+            g.drawText(displayText, font, foreColor, x, y, w, h, false, Align.center, true);
         }
     }
 

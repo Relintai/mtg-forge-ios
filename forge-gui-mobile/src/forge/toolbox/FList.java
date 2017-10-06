@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 import forge.Graphics;
 import forge.assets.FSkinColor;
@@ -321,7 +322,7 @@ public class FList<T> extends FScrollPane implements Iterable<T> {
 
         @Override
         public void drawValue(Graphics g, Integer index, V value, FSkinFont font, FSkinColor foreColor, FSkinColor backColor, boolean pressed, float x, float y, float w, float h) {
-            g.drawText(value.toString(), font, foreColor, x, y, w, h, false, HAlignment.LEFT, true);
+            g.drawText(value.toString(), font, foreColor, x, y, w, h, false, Align.left, true);
         }
     }
 

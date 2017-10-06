@@ -7,19 +7,21 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.BitmapFont.BitmapFontData;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.PixmapPacker;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
 import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import forge.FThreads;
 import forge.properties.ForgeConstants;
 import forge.util.FileUtil;
 import forge.util.Utils;
+import forge.toolbox.TextBounds;
 
 import java.io.File;
 import java.util.HashMap;
@@ -80,6 +82,8 @@ public class FSkinFont {
     private final int fontSize;
     private final float scale;
     private BitmapFont font;
+    private GlyphLayout glyphLayout = new GlyphLayout();
+    private TextBounds textBounds = new TextBounds();
 
     private FSkinFont(int fontSize0) {
         if (fontSize0 > MAX_FONT_SIZE) {
@@ -98,15 +102,34 @@ public class FSkinFont {
     // Expose methods from font that updates scale as needed
     public TextBounds getBounds(CharSequence str) {
         updateScale(); //must update scale before measuring text
-        return font.getBounds(str);
+
+        glyphLayout.setText(font, str);
+
+        textBounds.set(glyphLayout);
+
+        return textBounds;
     }
     public TextBounds getMultiLineBounds(CharSequence str) {
         updateScale();
-        return font.getMultiLineBounds(str);
+
+        glyphLayout.setText(font, str);
+
+        textBounds.set(glyphLayout);
+
+        return textBounds;
+
+        //return font.getMultiLineBounds(str);
     }
     public TextBounds getWrappedBounds(CharSequence str, float wrapWidth) {
         updateScale();
-        return font.getWrappedBounds(str, wrapWidth);
+
+        glyphLayout.setText(font, str, Color.WHITE, wrapWidth, Align.topLeft, true);
+
+        textBounds.set(glyphLayout);
+
+        return textBounds;
+
+        //return font.getWrappedBounds(str, wrapWidth);
     }
     public float getAscent() {
         updateScale();
@@ -121,20 +144,17 @@ public class FSkinFont {
         return font.getLineHeight();
     }
 
-    public void draw(SpriteBatch batch, String text, Color color, float x, float y, float w, boolean wrap, HAlignment horzAlignment) {
+    public void draw(SpriteBatch batch, String text, Color color, float x, float y, float w, boolean wrap, int alignment) {
         updateScale();
         font.setColor(color);
-        if (wrap) {
-            font.drawWrapped(batch, text, x, y, w, horzAlignment);
-        } else {
-            font.drawMultiLine(batch, text, x, y, w, horzAlignment);
-        }
+
+        font.draw(batch, text, x, y, w, alignment, wrap);
     }
 
     //update scale of font if needed
     private void updateScale() {
         if (font.getScaleX() != scale) {
-            font.setScale(scale);
+            font.getData(). setScale(scale);
         }
     }
 
@@ -200,7 +220,7 @@ public class FSkinFont {
         FThreads.invokeInEdtNowOrLater(new Runnable() {
             @Override
             public void run() {
-                TextureRegion[] textureRegions = new TextureRegion[pages.size];
+                Array<TextureRegion> textureRegions = new Array<TextureRegion>();
                 for (int i = 0; i < pages.size; i++) {
                     PixmapPacker.Page p = pages.get(i);
                     Texture texture = new Texture(new PixmapTextureData(p.getPixmap(), p.getPixmap().getFormat(), false, false)) {
@@ -211,7 +231,7 @@ public class FSkinFont {
                         }
                     };
                     texture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
-                    textureRegions[i] = new TextureRegion(texture);
+                    textureRegions.add(new TextureRegion(texture));
                 }
 
                 font = new BitmapFont(fontData, textureRegions, true);

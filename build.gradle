@@ -117,16 +117,15 @@ project(":forge-gui-mobile") {
 project(":forge-gui-mobile-desktop") {
     apply plugin: "java"
 
-
     dependencies {
         compile project(":forge-core")
         compile project(":forge-game")
         compile project(":forge-ai")
         compile project(":forge-gui")
         compile project(":forge-gui-mobile")
-        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+		compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
         compile "com.miglayout:miglayout:3.5.5"
         compile "com.mortennobel:java-image-scaling:0.8.5"
         compile "org.freemarker:freemarker:2.3.20"

@@ -1,6 +1,7 @@
 package forge.toolbox;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 import forge.Graphics;
 import forge.assets.FSkinColor;
@@ -167,6 +168,6 @@ public class FToggleSwitch extends FDisplayObject {
 
         x += PADDING;
         w -= 2 * PADDING;
-        g.drawText(text, font, FORE_COLOR, x, y, w, h, false, HAlignment.CENTER, true);
+        g.drawText(text, font, FORE_COLOR, x, y, w, h, false, Align.center, true);
     }
 }

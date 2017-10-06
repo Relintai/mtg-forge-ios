@@ -29,6 +29,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 
 public abstract class FormatFilter<T extends InventoryItem> extends ItemFilter<T> {
@@ -219,7 +220,7 @@ public abstract class FormatFilter<T extends InventoryItem> extends ItemFilter<T
                 float textHeight = h;
                 h *= 0.66f;
 
-                g.drawText(value.toString(), font, foreColor, x, y, w - h - FList.PADDING, textHeight, false, HAlignment.LEFT, true);
+                g.drawText(value.toString(), font, foreColor, x, y, w - h - FList.PADDING, textHeight, false, Align.left, true);
 
                 x += w - h;
                 y += (textHeight - h) / 2;

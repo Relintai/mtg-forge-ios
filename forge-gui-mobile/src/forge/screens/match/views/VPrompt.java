@@ -2,8 +2,8 @@ package forge.screens.match.views;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 import forge.Graphics;
 import forge.assets.FSkinColor;
@@ -18,6 +18,7 @@ import forge.toolbox.FButton.Corner;
 import forge.toolbox.FContainer;
 import forge.toolbox.FDisplayObject;
 import forge.toolbox.FEvent.FEventHandler;
+import forge.toolbox.TextBounds;
 import forge.util.Utils;
 
 public class VPrompt extends FContainer {
@@ -125,7 +126,7 @@ public class VPrompt extends FContainer {
                 float y = PADDING;
                 float w = getWidth() - 2 * PADDING;
                 float h = getHeight() - 2 * PADDING;
-                renderer.drawText(g, message, FONT, FORE_COLOR, x, y, w, h, y, h, true, HAlignment.CENTER, true);
+                renderer.drawText(g, message, FONT, FORE_COLOR, x, y, w, h, y, h, true, Align.center, true);
             }
         }
     }
