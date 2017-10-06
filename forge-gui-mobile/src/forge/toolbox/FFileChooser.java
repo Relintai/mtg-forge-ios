@@ -6,7 +6,7 @@ import java.io.FilenameFilter;
 import org.apache.commons.lang3.StringUtils;
 
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import forge.Forge;
 import forge.Graphics;

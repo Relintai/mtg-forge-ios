@@ -124,6 +124,7 @@ project(":forge-gui-mobile-desktop") {
         compile project(":forge-ai")
         compile project(":forge-gui")
         compile project(":forge-gui-mobile")
+        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         compile "com.miglayout:miglayout:3.5.5"

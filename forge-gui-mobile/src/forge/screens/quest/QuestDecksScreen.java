@@ -1,6 +1,7 @@
 package forge.screens.quest;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.utils.Align;
 
 import forge.FThreads;
 import forge.Forge;
@@ -34,7 +35,7 @@ public class QuestDecksScreen extends FScreen {
     private final FButton btnRandom = add(new FButton("Random Deck"));
 
     private final FLabel lblInfo = add(new FLabel.Builder()
-        .align(HAlignment.CENTER).font(FSkinFont.get(16))
+        .align(Align.center).font(FSkinFont.get(16))
         .text("Build or select a deck").build());
 
     private final FEventHandler onDeckSelectionChanged = new FEventHandler() {
@@ -161,6 +162,7 @@ public class QuestDecksScreen extends FScreen {
         float y = startY + PADDING / 2;
         float w = width - 2 * PADDING;
 
+       // lblInfo.get
         lblInfo.setBounds(x, y, w, lblInfo.getAutoSizeBounds().height);
         y += lblInfo.getHeight();
 

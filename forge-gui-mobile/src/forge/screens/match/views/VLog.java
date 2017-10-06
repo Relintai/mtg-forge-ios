@@ -2,7 +2,7 @@ package forge.screens.match.views;
 
 import java.util.List;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import forge.Graphics;
 import forge.assets.FSkinColor;

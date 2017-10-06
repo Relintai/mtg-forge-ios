@@ -1,6 +1,6 @@
 package forge.screens.planarconquest;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import forge.assets.FImage;
 import forge.assets.FSkinFont;

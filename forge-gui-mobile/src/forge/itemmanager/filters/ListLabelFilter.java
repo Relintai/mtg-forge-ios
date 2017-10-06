@@ -1,6 +1,6 @@
 package forge.itemmanager.filters;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import forge.assets.FSkinFont;
 import forge.item.InventoryItem;

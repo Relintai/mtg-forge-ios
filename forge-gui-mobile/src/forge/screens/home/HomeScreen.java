@@ -3,7 +3,7 @@ package forge.screens.home;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import forge.Forge;
 import forge.Graphics;

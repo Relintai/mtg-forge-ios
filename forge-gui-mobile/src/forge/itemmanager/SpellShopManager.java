@@ -3,7 +3,7 @@ package forge.itemmanager;
 import java.util.Map.Entry;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.google.common.base.Function;
 
 import forge.Graphics;

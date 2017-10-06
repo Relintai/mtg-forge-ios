@@ -3,7 +3,7 @@ package forge.itemmanager.filters;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import forge.assets.FImage;
 import forge.item.InventoryItem;

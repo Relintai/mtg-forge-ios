@@ -6,7 +6,7 @@ import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 

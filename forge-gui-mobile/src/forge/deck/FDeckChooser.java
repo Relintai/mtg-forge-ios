@@ -41,7 +41,7 @@ import forge.util.storage.IStorage;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.google.common.collect.ImmutableList;
 
 import java.util.ArrayList;

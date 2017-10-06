@@ -2,7 +2,7 @@ package forge.screens.planarconquest;
 
 import java.util.Map.Entry;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.google.common.base.Predicate;
 
 import forge.Forge;

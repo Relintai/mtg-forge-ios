@@ -1,6 +1,6 @@
 package forge.itemmanager.filters;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.google.common.base.Predicate;
 
 import forge.card.CardRules;

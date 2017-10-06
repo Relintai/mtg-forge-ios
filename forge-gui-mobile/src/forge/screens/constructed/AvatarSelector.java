@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 public class AvatarSelector extends FScreen {
     public static int getRandomAvatar(List<Integer> usedAvatars) {

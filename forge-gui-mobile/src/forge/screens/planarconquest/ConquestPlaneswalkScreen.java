@@ -1,7 +1,7 @@
 package forge.screens.planarconquest;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import forge.Forge;
 import forge.Graphics;

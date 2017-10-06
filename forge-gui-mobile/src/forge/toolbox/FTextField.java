@@ -1,8 +1,7 @@
 package forge.toolbox;
 
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import forge.Forge;
 import forge.Forge.KeyInputAdapter;

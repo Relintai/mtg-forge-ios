@@ -5,7 +5,7 @@ import java.util.*;
 import org.apache.commons.lang3.StringUtils;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.google.common.collect.Iterables;
 
 import forge.FThreads;

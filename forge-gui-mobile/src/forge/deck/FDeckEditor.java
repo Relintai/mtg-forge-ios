@@ -1,7 +1,7 @@
 package forge.deck;
 
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.Vector2;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;

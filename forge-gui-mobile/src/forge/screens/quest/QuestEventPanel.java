@@ -1,7 +1,7 @@
 package forge.screens.quest;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import forge.Graphics;
 import forge.assets.*;
 import forge.assets.FSkinColor.Colors;

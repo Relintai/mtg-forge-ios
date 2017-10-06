@@ -20,7 +20,7 @@ import forge.toolbox.FList;
 import forge.toolbox.FList.CompactModeHandler;
 import forge.util.Utils;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import java.util.Map.Entry;
 

@@ -1,6 +1,6 @@
 package forge.screens.quest;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.Vector2;
 
 import forge.assets.FSkinFont;

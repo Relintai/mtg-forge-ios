@@ -1,6 +1,6 @@
 package forge.toolbox;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 public class FNumericTextField extends FTextField {
     private int value;

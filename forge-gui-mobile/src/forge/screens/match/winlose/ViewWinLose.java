@@ -1,7 +1,7 @@
 package forge.screens.match.winlose;
 
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import forge.FThreads;
 import forge.Forge;
 import forge.assets.FSkinColor;

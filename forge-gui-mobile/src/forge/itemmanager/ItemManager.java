@@ -18,7 +18,7 @@
 package forge.itemmanager;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.Rectangle;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;

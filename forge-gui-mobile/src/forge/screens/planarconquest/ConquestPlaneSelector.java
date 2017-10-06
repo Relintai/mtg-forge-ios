@@ -3,7 +3,7 @@ package forge.screens.planarconquest;
 import java.util.List;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.Rectangle;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableList;

@@ -1,7 +1,6 @@
 package forge.menu;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont.HAlignment;
-import com.badlogic.gdx.graphics.g2d.BitmapFont.TextBounds;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 import forge.Graphics;
 import forge.assets.FSkinColor;
