@@ -14,6 +14,9 @@ public class Main {
     public static void main (String[] arg) {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
+        config.height = 800;
+        config.width = 600;
+
        // FileHandle fg = Gdx.files.local("Forge/");
 
        // if (!fg.exists()) {
