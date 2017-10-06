@@ -106,7 +106,9 @@ project(":forge-gui-mobile") {
 
     dependencies {
         compile project(":forge-core")
+        compile project(":forge-game")
         compile project(":forge-ai")
+        compile project(":forge-gui")
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
     }
@@ -118,7 +120,9 @@ project(":forge-gui-mobile-desktop") {
 
     dependencies {
         compile project(":forge-core")
+        compile project(":forge-game")
         compile project(":forge-ai")
+        compile project(":forge-gui")
         compile project(":forge-gui-mobile")
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"

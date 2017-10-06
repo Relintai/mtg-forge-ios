@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>mtg-forge-gradle-desktop</name>
-	<comment>Project my-gdx-game-desktop created by Buildship.</comment>
+	<name>forge-gui-mobile-desktop</name>
+	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
@@ -20,17 +20,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>assets</name>
-			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/core/assets</locationURI>
-		</link>
-	</linkedResources>
-	<variableList>
-		<variable>
-			<name>copy_PARENT</name>
-			<value>$%7BPARENT-2-PROJECT_LOC%7D/Projects/mtg-forge-ios</value>
-		</variable>
-	</variableList>
 </projectDescription>
