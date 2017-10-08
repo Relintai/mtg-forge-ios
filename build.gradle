@@ -132,10 +132,6 @@ project(":forge-gui-mobile-desktop") {
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
-        compile "com.miglayout:miglayout:3.5.5"
-        compile "com.mortennobel:java-image-scaling:0.8.5"
-        compile "org.freemarker:freemarker:2.3.20"
-        compile "javazoom:jlayer:1.0.1"
     }
 }
 
@@ -153,10 +149,6 @@ project(":forge-gui-mobile-ios-moe") {
         compile "com.badlogicgames.gdx:gdx-backend-moe:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
         compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
-        compile "com.miglayout:miglayout:3.5.5"
-        compile "com.mortennobel:java-image-scaling:0.8.5"
-        compile "org.freemarker:freemarker:2.3.20"
-        compile "javazoom:jlayer:1.0.1"
     }
 }
 
@@ -177,13 +169,6 @@ project(":forge-gui-mobile-ios") {
         compile "com.badlogicgames.gdx:gdx-backend-robovm:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
         compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
-
-
-        compile "com.miglayout:miglayout:3.5.5"
-        compile "com.mortennobel:java-image-scaling:0.8.5"
-        compile "org.freemarker:freemarker:2.3.20"
-        compile "javazoom:jlayer:1.0.1"
-
     }
 }
 
