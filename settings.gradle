@@ -1,1 +1,1 @@
-include 'forge-ai', 'forge-core', 'forge-game', 'forge-gui', 'forge-gui-desktop', 'forge-gui-mobile', 'forge-gui-mobile-desktop', 'forge-gui-ios', 'ios-moe'
+include 'forge-ai', 'forge-core', 'forge-game', 'forge-gui', 'forge-gui-desktop', 'forge-gui-mobile', 'forge-gui-mobile-desktop', 'forge-gui-mobile-ios-moe', 'forge-gui-mobile-ios'

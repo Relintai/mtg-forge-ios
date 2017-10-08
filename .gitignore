@@ -1,6 +1,8 @@
 .gradle/*
-build/*
+build/
+robovm-build/
 xcode/*
 *.class
 *.jar
 .idea/
+*.swp
